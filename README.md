@@ -1,4 +1,4 @@
 # Blade-Symphony-Plugin-Guides
-Some useful Souremod code examples
 
-[insert main gh-pages link]
+Some useful Sourcemod code examples:
+https://diretidecandy.github.io/Blade-Symphony-Plugin-Guides/
