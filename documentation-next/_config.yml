@@ -1,0 +1,105 @@
+language: english
+
+# Link to home
+url: /
+
+# link to github repo
+#github_editme_path: https://github.com/tomjohnson1492/documentation-theme-jekyll-next-version/blob/gh-pages/
+
+image_path: docs/images/
+port: 4000
+highlighter: rouge
+
+highlighting_css: monokai
+# options: "monokai" (black), "syntax" (white)
+navbar_style: lighttheme-bluegray
+# navbar_logo: docs/images/samplelogo.png
+
+image_path: /docs/images/
+
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+
+collections:
+  docs:
+    output: true
+  tags:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      topnav: topnav
+      tag_group: taglist
+  -
+    scope:
+      path: ""
+      type: docs
+    values:
+      layout: default
+      topnav: topnav
+      tag_group: taglist
+  -
+    scope:
+      path: ""
+      type: tags
+    values:
+      layout: default
+      topnav: topnav
+      sidebar: taglist
+      toc: false
+      github_button: false
+      search: false
+
+algolia:
+    application_id: 'HXUBJERYYB'
+    index_name:     'documentation-theme-jekyll'
+    record_css_selector: 'p,ul'
+    settings:
+    attributesToIndex:
+      - title
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - unordered(text)
+      - unordered(tags)
+      - summary
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - index_de.md
+  - index_ja.md
+
+gems:
+  - algoliasearch-jekyll
+
+########## UI text ###############
+
+
+uistring:
+    title: Jekyll Documentation theme # Displays as site title on top nav bar and on site metadata
+    description: Documentation theme for Jekyll websites  # Displays as site description meta
+    search_placeholder_global: Global Search ...
+    search_placeholder_product: Product Search ...
+    minitoc_title: Table of Contents
+    tags_title: Tags
+    github_edit_button_text: Edit me
+    search_results_page_title: Search results
+    search_no_results_found: No results found.
+    tag_terms:
+      product: Product
+      page: Page
+      excerpt: Excerpt
+      tag_page_intro: The following pages are tagged with

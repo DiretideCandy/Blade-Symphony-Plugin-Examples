@@ -4,7 +4,6 @@ Code from tutorial at https://wiki.alliedmods.net/Introduction_to_sourcemod_plug
 
 #include <sourcemod>
 
-
 public Plugin myinfo =
 {
 	name = "My First Plugin",
