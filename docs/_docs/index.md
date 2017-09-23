@@ -35,8 +35,7 @@ public void OnPluginStart()
 }
 ```
 
-Let's add some basic stuff to it! 
-
+Let's add some basic stuff to it!<br>
 First thing will be our favorite prefix for text strings. Symbols "\x01", "\x02", "\x03", etc. apply colors to subsequent letters, where "\x01" is default white:
 
 ```c
