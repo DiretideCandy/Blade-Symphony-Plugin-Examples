@@ -1,10 +1,9 @@
 ---
-title: //Getting started page//
+title: Introduction
 keywords: homepage
-tags: [getting_started]
+tags: [introduction, home]
 sidebar: mydoc_sidebar
 permalink: index.html
-summary: These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.
 ---
 
 [Insert some text here]
@@ -65,9 +64,9 @@ public void OnPluginStart()
 ```
 
 Result in chat:
-<img class="img-responsive img-full" src="{{ site.baseurl }}/img/index_hw_chat.png" alt="text in chat">
+<img class="img-responsive img-full" src="{{ site.baseurl }}/index_hw_chat.png" alt="text in chat">
 
 and in server's window:
-<img class="img-responsive img-full" src="{{ site.baseurl }}/img/index_hw_server.png" alt="text in server">
+<img class="img-responsive img-full" src="{{ site.baseurl }}/index_hw_server.png" alt="text in server">
 Well, terminal obviously doesn't care about colors, but this looks nice in Windows anyway.
 

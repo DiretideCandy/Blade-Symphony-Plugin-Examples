@@ -23,13 +23,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Get started
-      url: /index.html
-      output: web, pdf
-      type: homepage
-
     - title: Introduction
-      url: /mydoc_introduction.html
+      url: /index.html
       output: web, pdf
 
     - title: Supported features
