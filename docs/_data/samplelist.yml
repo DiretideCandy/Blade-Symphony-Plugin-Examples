@@ -1,49 +1,3 @@
-podcast_list_title: Favorite Podcasts
-podcasts:
-
-- title: This Week in Tech
-  url: https://twit.tv/shows/this-week-in-tech
-
-- title: Radio Lab
-  url: http://www.radiolab.org/
-
-- title: Night Vale
-  url: http://www.welcometonightvale.com/
-  
-basiclist:
-- This Week in Tech
-- Radio Lab
-- Night Vale
-
-toc:
-  - title: Group 1
-    subfolderitems:
-      - page: Thing 1
-        url: /thing1.html
-      - page: Thing 2
-        url: /thing2.html
-      - page: Thing 3
-        url: /thing3.html
-  - title: Group 2
-    subfolderitems:
-      - page: Piece 1
-        url: /piece1.html
-      - page: Piece 2
-        url: /piece2.html
-      - page: Piece 3
-        url: /piece3.html
-  - title: Group 3
-    subfolderitems:
-      - page: Widget 1
-        url: /widget1.html
-      - page: Widget 2
-        url: /widget2.html
-      - page: Widget 3
-        url: /widget3.html
-
-
-
-
 entries:
 - title: Sidebar
   folders:
@@ -68,56 +22,11 @@ name:
   husband: Tom
   wife: Shannon
 
+bikes:
+  - title: mountain bikes
+  - title: road bikes
+  - title: hybrid bikes
 
-
-
-  
-  
-  
-  
-folders:
-  - title: First level 
-    folderitems:
-  
-    - title: Sample 1
-      url: /sample1.html
-  
-    - title: Sample 2
-      url: /sample2.html
-  
-    - title: Sample 3
-      url: /sample3.html
-        
-    - title: Sample 1
-      url: /sample1.html
-  
-    - title: Sample 2
-      url: /sample2.html
-  
-    - title: Sample 3
-      url: /sample3.html
-    
-    - title: Sample 1
-      url: /sample1.html
-  
-    - title: Sample 2
-      url: /sample2.html
-  
-    - title: Sample 3
-      url: /sample3.html
-
-    subfolders:
-    - title: Second level 
-      subfolderitems:
-
-      - title: Sublevel 1
-        url: /sublevel1.html
-
-      - title: Sublevel 2
-        url: /sublevel2.html
-
-      - title: Sublevel 3
-        url: /sublevel3.html  
 
 salesteams:
   - title: Regions
@@ -126,7 +35,22 @@ salesteams:
       - location: Spain
       - location: France
 
-
+toc:
+  - title: Group 1
+    subfolderitems:
+      - page: Thing 1
+      - page: Thing 2
+      - page: Thing 3
+  - title: Group 2
+    subfolderitems:
+      - page: Piece 1
+      - page: Piece 2
+      - page: Piece 3
+  - title: Group 3
+    subfolderitems:
+      - page: Widget 1
+      - page: Widget 2
+      - page: Widget 3
 
 something: &hello Greetings earthling!
 myref: *hello

@@ -1,33 +1,21 @@
-<div class="inner">
 
-{% unless page.toc == false %}
-<style>
-nav#toc >ul::before, nav#toc2 >ul::before {
-    content: "{{site.uistring.minitoc_title}}";
-}
-</style>
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
 $( document ).ready(function() {
   // Handler for .ready() called.
 
-$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
 
 /* this offset helps account for the space taken up by the floating toolbar. */
 $('#toc').on('click', 'a', function() {
   var target = $(this.getAttribute('href'))
     , scroll_target = target.offset().top
 
-  $(window).scrollTop(scroll_target - 80);
+  $(window).scrollTop(scroll_target - 10);
   return false
 })
-
-});
-$(window).scroll(function(){
-  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+  
 });
 </script>
 
-<nav id="toc"></nav>
-
-{% endunless %}
-</div>
+<div id="toc"></div>
