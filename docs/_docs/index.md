@@ -35,21 +35,26 @@ public void OnPluginStart()
 ```
 
 Let's add some basic stuff to it! 
-First thing will be our favorite prefix for text strings. Symbols "\x01", "\x02", etc. apply colors to
+First thing will be our favorite prefix for text strings. Symbols "\x01", "\x02", "\x03", etc. apply colors to subsequent letters, where \x01 is default white.
 
 <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/blob/master/addons/sourcemod/scripting/examples/hello_world_modified.sp">plugin</a>
 ```c
+
+// add constant so you don't need to guess every time which acronym did you choose
 #define PLUGIN_PREFIX "\x03[HW]\x01"
 
 public void OnPluginStart()
 {
 	PrintToServer("%s Hello world!", PLUGIN_PREFIX);
+	
+	// Print message in chat to all players
 	PrintToChatAll("%s Hello world!", PLUGIN_PREFIX);
 }
 ```
 
-Results in chat:
+Result in chat:
 <img class="img-responsive img-full" src="{{ site.baseurl }}/img/index_hw_chat.png" alt="text in chat">
 
 and in server's window:
 <img class="img-responsive img-full" src="{{ site.baseurl }}/img/index_hw_server.png" alt="text in server">
+Well, terminal obviously doesn't care about colors, but this looks nice in Windows anyway.

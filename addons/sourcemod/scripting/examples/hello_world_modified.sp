@@ -14,5 +14,7 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	PrintToServer("%s Hello world!", PLUGIN_PREFIX);
+	
+	// Print message in chat to all players
 	PrintToChatAll("%s Hello world!", PLUGIN_PREFIX);
 }
