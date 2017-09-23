@@ -1,4 +1,3 @@
-# Blade Symphony Plugin Guides
-Some useful Sourcemod code examples
+# Blade Symphony Plugin Examples
 
 https://diretidecandy.github.io/Blade-Symphony-Plugin-Guides/
