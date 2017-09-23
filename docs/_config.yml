@@ -89,8 +89,8 @@ gems:
 
 
 uistring:
-    title: Jekyll Documentation theme # Displays as site title on top nav bar and on site metadata
-    description: Documentation theme for Jekyll websites  # Displays as site description meta
+    title: BS plugins # Displays as site title on top nav bar and on site metadata
+    description: Blade Symphony Sourcemod plugin examples  # Displays as site description meta
     search_placeholder_global: Global Search ...
     search_placeholder_product: Product Search ...
     minitoc_title: Table of Contents
