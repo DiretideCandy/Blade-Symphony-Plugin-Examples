@@ -1,1 +1,1 @@
-https://diretidecandy.github.io/Blade-Symphony-Plugin-Guides/
+https://diretidecandy.github.io/Blade-Symphony-Plugin-Examples/
