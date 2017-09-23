@@ -42,7 +42,7 @@ First thing will be our favorite prefix for text strings. Symbols "\x01", "\x02"
 ```c
 #include <sourcemod>
 
-// add constant so you don't need to guess every time which acronym did you choose
+// add a constant, so you don't need to guess every time which acronym did you choose
 #define PLUGIN_PREFIX "\x03[HW]\x01"
 
 public Plugin myinfo =
