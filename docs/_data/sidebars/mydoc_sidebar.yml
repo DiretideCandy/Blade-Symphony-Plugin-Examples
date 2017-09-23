@@ -20,41 +20,53 @@ entries:
 #      type: frontmatter
 
   - title: Overview
-    output: web, pdf
+    output: web
     folderitems:
 
     - title: Introduction
       url: /index.html
-      output: web, pdf
+      output: web
 
     - title: Page 1
       url: /mydoc_supported_features.html
-      output: web, pdf
+      output: web
 
     - title: Page 2
       url: /mydoc_about.html
-      output: web, pdf
+      output: web
 
   - title: bs_stocks.inc
-    output: web, pdf
+    output: web
     folderitems:
 
     - title: Page 1
       url: /mydoc_supported_features.html
-      output: web, pdf
+      output: web
 
     - title: Page 2
       url: /mydoc_about.html
-      output: web, pdf
+      output: web
 
   - title: How to do ...
-    output: web, pdf
+    output: web
     folderitems:
 
     - title: ... Page 1
       url: /mydoc_supported_features.html
-      output: web, pdf
+      output: web
 
     - title: ... Page 1
       url: /mydoc_about.html
-      output: web, pdf
+      output: web
+
+  - title: Plugins
+    output: web
+    folderitems:
+
+    - title: ... Page 1
+      url: /mydoc_supported_features.html
+      output: web
+
+    - title: ... Page 1
+      url: /mydoc_about.html
+      output: web
