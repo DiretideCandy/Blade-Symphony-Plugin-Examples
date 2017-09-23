@@ -64,9 +64,9 @@ public void OnPluginStart()
 ```
 
 Result in chat:
-<img class="img-responsive img-full" src="{{ site.baseurl }}/index_hw_chat.png" alt="text in chat">
+<img class="img-responsive img-full" src="{{ site.baseurl }}/images/index_hw_chat.png" alt="text in chat">
 
 and in server's window:
-<img class="img-responsive img-full" src="{{ site.baseurl }}/index_hw_server.png" alt="text in server">
+<img class="img-responsive img-full" src="{{ site.baseurl }}/images/index_hw_server.png" alt="text in server">
 Well, terminal obviously doesn't care about colors, but this looks nice in Windows anyway.
 
