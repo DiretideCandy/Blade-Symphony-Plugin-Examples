@@ -8,6 +8,8 @@ permalink: bs_stocks_IsValidClient.html
 folder: mydoc
 ---
 
+Safety: 146% - Gormarim and Elmo both had it like this.
+
 ```c
 /**
  * Checks if client is valid.
@@ -22,13 +24,12 @@ stock bool IsValidClient(int client)
 }
 ```
 
-Safety: 146% - Gormarim and Elmo both had it like this.
-<br><br>
-Every entity on the map has its index and every player is an entity with index between 1 and <Maximum players>. You can access server's current maximum number of players value with Sourcemod's constant MaxClients. Also, at any time you can see players' indexes ingame with console command status:
+<br>
+Every entity on the map has its index and every player is an entity with index between 1 and \005CMaximum players\005C. You can access server's current maximum number of players value with Sourcemod's constant MaxClients. Also, at any time you can see players' indexes ingame with console command status:
 <img class="img-responsive img-full" src="{{ site.baseurl }}/images/isvalidclient_indexes.png" alt="status result">
 second column in result are player entity indexes
 <br><br>
-Most Sourcemod function (if they work with players) will fail if you pass them invalid client (for example: you stored one and player disconnected). 
+Most Sourcemod functions (if they work with players) will fail if you pass them invalid client (for example: you stored one and player disconnected). 
 Let's look at this simple command:
 ```c
 public Action test(int client, int args)
@@ -39,9 +40,9 @@ public Action test(int client, int args)
 	PrintToServer("<<test>> Done!");
 }
 ```
-After calling it you expect to see a new message in server's console, but it will only appear if the server is full! If even one player slot is empty, PrintToChat function fails and execution of this action stops.
+After calling it you expect to see a new message in server's console, but it will only appear if the server is full! If even one player slot is empty, PrintToChat function receives invalid argument, fails and execution of this action stops.
 <br>
-Every time you must make sure, that client's validity confirmed somewhere before:
+Every time you must make sure that clients' validity confirmed:
 ```c
 public Action test(int client, int args)
 {
