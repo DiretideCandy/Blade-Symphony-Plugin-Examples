@@ -25,7 +25,7 @@ stock bool IsValidClient(int client)
 ```
 
 <br>
-Every entity on the map has its index and every player is an entity with index between 1 and \005CMaximum players\005C. You can access server's current maximum number of players value with Sourcemod's constant MaxClients. Also, at any time you can see players' indexes ingame with console command status:
+Every entity on the map has its index and every player is an entity with index between 1 and current Maximum of players. You can access server's maximum number of players value with Sourcemod's constant MaxClients. Also, at any time you can see players' indexes ingame with console command status:
 <img class="img-responsive img-full" src="{{ site.baseurl }}/images/isvalidclient_indexes.png" alt="status result">
 second column in result are player entity indexes
 <br><br>
