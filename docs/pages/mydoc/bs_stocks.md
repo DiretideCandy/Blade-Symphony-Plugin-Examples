@@ -42,4 +42,4 @@ stock int Abs(int x)
 }
 ```
 
-'stock' keyword marks this function as optional. Compiler won't write 'symbol is never used: "Abs"' warning for this function.
+"stock" keyword marks this function as optional. Compiler won't write "symbol is never used: 'Abs'" warning for this function.
