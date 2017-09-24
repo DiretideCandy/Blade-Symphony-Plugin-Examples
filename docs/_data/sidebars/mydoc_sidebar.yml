@@ -43,6 +43,10 @@ entries:
       url: /bs_stocks.html
       output: web
 
+    - title: IsValidClient
+      url: /bs_stocks_IsValidClient.html
+      output: web
+
   - title: How to do ...
     output: web
     folderitems:
