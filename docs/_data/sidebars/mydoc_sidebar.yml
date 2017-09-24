@@ -59,10 +59,6 @@ entries:
       url: /howto_hp.html
       output: web
 
-#    - title: ... Page 4
-#      url: /some_page.html
-#      output: web
-
   - title: Plugins
     output: web
     folderitems:
@@ -71,7 +67,7 @@ entries:
       url: /some_page.html
       output: web
 
-  - title: TODO: WaP
+  - title: WaP
     output: web
     folderitems:
 
