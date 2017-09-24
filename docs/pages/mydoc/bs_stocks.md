@@ -17,14 +17,14 @@ folder: mydoc
 
 ## Example
 
-Example of simple .inc file:
+Example of simple bs_stocks.inc file:
 
 ```c
 // This C stuff makes sure this file doesn't get included two or more times
-#if defined _bs_stocks_included
+#if defined _name_of_this_lib_included
  #endinput
 #endif
-#define _bs_stocks_included
+#define _name_of_this_lib_included
 
 // Include basic Sourcemod libraries if required by your functions
 #include <sdktools>

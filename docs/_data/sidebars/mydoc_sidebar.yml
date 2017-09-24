@@ -27,13 +27,13 @@ entries:
       url: /index.html
       output: web
 
-    - title: Page 1
-      url: /some_page.html
-      output: web
+#    - title: Page 1
+#      url: /some_page.html
+#      output: web
 
-    - title: Page 2
-      url: /some_page.html
-      output: web
+#    - title: Page 2
+#      url: /some_page.html
+#      output: web
 
   - title: bs_stocks.inc
     output: web
@@ -47,26 +47,38 @@ entries:
       url: /bs_stocks_IsValidClient.html
       output: web
 
+    - title: IsInDuel
+      url: /bs_stocks_IsInDuel.html
+      output: web
+	  
   - title: How to do ...
     output: web
     folderitems:
 
-    - title: ... Page 3
-      url: /some_page.html
+    - title: Player's HP
+      url: /howto_hp.html
       output: web
 
-    - title: ... Page 4
-      url: /some_page.html
-      output: web
+#    - title: ... Page 4
+#      url: /some_page.html
+#      output: web
 
   - title: Plugins
     output: web
     folderitems:
 
-    - title: Page 5
+    - title: example_ex1_before.sp
       url: /some_page.html
       output: web
+#
+#    - title: Page 6
+#      url: /some_page.html
+#      output: web
 
-    - title: Page 6
+  - title: TODO: w-a-p
+    output: web
+    folderitems:
+
+    - title: Page 1
       url: /some_page.html
       output: web

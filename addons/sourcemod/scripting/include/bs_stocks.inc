@@ -26,6 +26,29 @@ stock bool IsValidClient(int client)
 	return (client >= 1 && client <= MaxClients && IsValidEntity(client) && IsClientInGame(client));
 }
 
+/**
+ * Checks if client is in duel.
+ *
+ * @param client		Client entity index to check.
+ *
+ * @return				True if valid, false otherwise. 
+ */
+stock bool IsInDuel(int client)
+{
+	if(!IsClientInGame(client))
+		return false;
+	
+	int g_DuelState[MAXPLAYERS+1];
+	int m_Offset = FindSendPropInfo("CBerimbauPlayerResource", "m_iDuel");
+	int ResourceManager = FindEntityByClassname(-1, "berimbau_player_manager");
+
+	GetEntDataArray(ResourceManager, m_Offset, g_DuelState, 34, 4);
+	
+	if(g_DuelState[client] != 0)
+		return true;
+	
+	return false;
+}
 
 /**
  * Finds client entity index by client name.
@@ -64,30 +87,6 @@ stock int FindPlayerByName(char[] name_substr)
 		return 0;
 	
 	return last_match;
-}
-
-/**
- * Checks if client is in duel.
- *
- * @param client		Client entity index to check.
- *
- * @return				True if valid, false otherwise. 
- */
-stock bool IsInDuel(int client)
-{
-	if(!IsClientInGame(client))
-		return false;
-	
-	int g_DuelState[MAXPLAYERS+1];
-	int m_Offset = FindSendPropInfo("CBerimbauPlayerResource", "m_iDuel");
-	int ResourceManager = FindEntityByClassname(-1, "berimbau_player_manager");
-
-	GetEntDataArray(ResourceManager, m_Offset, g_DuelState, 34, 4);
-	
-	if(g_DuelState[client] != 0)
-		return true;
-	
-	return false;
 }
 
 /**
