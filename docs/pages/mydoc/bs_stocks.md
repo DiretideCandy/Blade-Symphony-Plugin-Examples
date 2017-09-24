@@ -11,8 +11,8 @@ folder: mydoc
 
 ## bs_stocks.inc file
 
-[What and why]
-[Place it into /addons/sourcemod/scripting/include/]
+[What and why]<br>
+[Place it into /addons/sourcemod/scripting/include/]<br>
 [Mine: <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/blob/master/addons/sourcemod/scripting/include/bs_stocks.inc">bs_stocks.inc</a>]
 
 ## Example

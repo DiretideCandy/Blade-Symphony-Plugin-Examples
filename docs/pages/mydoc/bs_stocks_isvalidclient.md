@@ -32,7 +32,7 @@ second column in result are player entity indexes
 Most Sourcemod functions (if they work with players) will fail if you pass them invalid client (for example: you stored one and player disconnected). 
 Let's look at this simple command:
 ```c
-public Action test(int client, int args)
+public Action simple_command(int client, int args)
 {
 	for (int i = 1; i <= MaxClients; i++)
 		PrintToChat(i, "%s Hi!", PLUGIN_PREFIX);
@@ -40,11 +40,11 @@ public Action test(int client, int args)
 	PrintToServer("<<test>> Done!");
 }
 ```
-After calling it you expect to see a new message in server's console, but it will only appear if the server is full! If even one player slot is empty, PrintToChat function receives invalid argument, fails and execution of this action stops.
+After calling it you expect to see a new message in server's console, but it will only appear if the server is full! If even one player slot is empty, PrintToChat function receives invalid argument, fails, and execution of this action stops.
 <br>
-Every time you must make sure that clients' validity confirmed:
+Every time you must make sure that number you pass is a valid client:
 ```c
-public Action test(int client, int args)
+public Action simple_command(int client, int args)
 {
 	for (int i = 1; i <= MaxClients; i++)
 		if (IsValidClient(i))
@@ -54,4 +54,4 @@ public Action test(int client, int args)
 }
 ```
 <br><br>
-Unnecessary note: This function (and not only this) will work incorrectly if someone hosts a server from a game itself: in this case he must be addressed as player with index 0. You should avoid this by hosting a srcds server on the same computer instead.
+Unnecessary note. This function (and not only this) will work incorrectly if someone hosts a server from a game itself: in this case he must be addressed as player with index 0. You should avoid this by hosting a srcds server on the same computer instead.
