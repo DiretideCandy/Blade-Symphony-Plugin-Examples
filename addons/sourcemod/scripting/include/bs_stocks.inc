@@ -5,6 +5,16 @@
 #include <sdktools>
 
 /**
+ * @param x				Integer
+ *
+ * @return				Absolute value of integer. 
+ */
+stock int Abs(int x)
+{
+   return x>0 ? x : -x;
+}
+
+/**
  * Checks if client is valid.
  *
  * @param client		Client entity index to check.
@@ -90,7 +100,7 @@ stock bool IsInDuel(int client)
  * @param size			brush size (wlh)
  * @noreturn
  */
-int CreateBrush(const char[] type, const float vecPos[3],/* float vecDir[3],*/ const float size[3], const int spawnflags = 1)
+stock int CreateBrush(const char[] type, const float vecPos[3],/* float vecDir[3],*/ const float size[3], const int spawnflags = 1)
 {
 	int ent;
 	
@@ -133,7 +143,7 @@ int CreateBrush(const char[] type, const float vecPos[3],/* float vecDir[3],*/ c
 	return ent;
 }
 
-public AntiShuriTouch(const String:output[], caller, activator, Float:delay)
+stock public AntiShuriTouch(const String:output[], caller, activator, Float:delay)
 {		
 	//PrintToChatAll("AntiShuriTouch: %d", activator);
 
@@ -149,7 +159,7 @@ public AntiShuriTouch(const String:output[], caller, activator, Float:delay)
 	}
 }
 
-stock DrawBeam(int& targetEntity, int& beamEntity, const float targetPos[3], const float beamPos[3], const char[] color)
+stock void DrawBeam(int& targetEntity, int& beamEntity, const float targetPos[3], const float beamPos[3], const char[] color)
 {
 	targetEntity = CreateEntityByName("env_sprite"); 
 	SetEntityModel(targetEntity, "materials/particle/dys_beam_big_rect.vmt");
@@ -184,16 +194,11 @@ stock DrawBeam(int& targetEntity, int& beamEntity, const float targetPos[3], con
  *
  * @param entity		Entity to remove.
  */
-RemoveEntity(entity)
+stock void RemoveEntity(entity)
 {
 	if ((entity > MaxClients) && IsValidEdict(entity))
 	{
 		AcceptEntityInput(entity, "Deactivate");
 		AcceptEntityInput(entity, "Kill");
 	}
-}
-
-stock int Abs(int x)
-{
-   return x>0 ? x : -x;
 }
