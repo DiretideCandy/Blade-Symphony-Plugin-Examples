@@ -70,10 +70,6 @@ entries:
     - title: example_ex1_before.sp
       url: /some_page.html
       output: web
-#
-#    - title: Page 6
-#      url: /some_page.html
-#      output: web
 
   - title: TODO: w-a-p
     output: web
