@@ -54,4 +54,4 @@ public Action test(int client, int args)
 }
 ```
 <br><br>
-This function will work incorrectly if someone hosts a server from a game itself: he must be addressed as player with index 0. You should avoid this case by hosting a srcds server on the same computer instead.
+Unnecessary note: This function (and not only this) will work incorrectly if someone hosts a server from a game itself: in this case he must be addressed as player with index 0. You should avoid this by hosting a srcds server on the same computer instead.
