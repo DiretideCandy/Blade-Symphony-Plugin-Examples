@@ -71,7 +71,7 @@ entries:
       url: /some_page.html
       output: web
 
-  - title: TODO: w-a-p
+  - title: TODO: WaP
     output: web
     folderitems:
 
