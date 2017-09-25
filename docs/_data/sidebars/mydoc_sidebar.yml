@@ -73,10 +73,10 @@ entries:
     folderitems:
 
       subfolders:
-    - title: Weakest link
-      output: web
-      subfolderitems:
-
-      - title: Page 1
-        url: /some_page.html
+      - title: Weakest link
         output: web
+        subfolderitems:
+
+        - title: Page 1
+          url: /some_page.html
+          output: web
