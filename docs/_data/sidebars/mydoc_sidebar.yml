@@ -60,39 +60,27 @@ entries:
       url: /howto_hp.html
       output: web
 
-#  - title: Plugins
-#    output: web
-#    folderitems:
-#
-#    - title: example_ex1_before.sp
-#      url: /some_page.html
-#      output: web
-#
-#  - title: Writing a plugin
-#    output: web
-#    folderitems:
-#
-#      subfolders:
-#      - title: Weakest link
-#        output: web
-#        subfolderitems:
-#
-#        - title: Page 1
-#          url: /some_page.html
-#          output: web
-  - title: Tag archives
+  - title: Plugins
     output: web
     folderitems:
 
-    - title: Tag archives overview
-      url: /mydoc_tag_archives_overview.html
+    - title: example_ex1_before.sp
+      url: /some_page.html
+      output: web
+
+  - title: Writing a plugin
+    output: web
+    folderitems:
+
+    - title: Hello world!
+      url: /some_page2.html
       output: web
 
       subfolders:
-      - title: Tag archive pages
+      - title: Weakest link
         output: web
         subfolderitems:
 
-        - title: Formatting pages
-          url: /some_page.html
+        - title: Page 1
+          url: /some_page3.html
           output: web
