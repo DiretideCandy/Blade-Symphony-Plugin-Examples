@@ -11,7 +11,7 @@ folder: mydoc
 Simple event plugin:<br>
 FFA on Arena. When player dies -> reset round without this player.
 <br><br>
-First goals:
+Initial goals:
 * Admin commands for starting event manually
 	1. /wl_add &lt;index of player&gt;<br>
 	Adding players to event. We'll worry about automatic player gathering later.
