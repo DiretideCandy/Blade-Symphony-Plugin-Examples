@@ -60,23 +60,35 @@ entries:
       url: /howto_hp.html
       output: web
 
-  - title: Plugins
-    output: web
-    folderitems:
-
-    - title: example_ex1_before.sp
-      url: /some_page.html
-      output: web
-
-  - title: Writing a plugin
+#  - title: Plugins
+#    output: web
+#    folderitems:
+#
+#    - title: example_ex1_before.sp
+#      url: /some_page.html
+#      output: web
+#
+#  - title: Writing a plugin
+#    output: web
+#    folderitems:
+#
+#      subfolders:
+#      - title: Weakest link
+#        output: web
+#        subfolderitems:
+#
+#        - title: Page 1
+#          url: /some_page.html
+#          output: web
+  - title: Tag archives
     output: web
     folderitems:
 
       subfolders:
-      - title: Weakest link
+      - title: Tag archive pages
         output: web
         subfolderitems:
 
-        - title: Page 1
+        - title: Formatting pages
           url: /some_page.html
           output: web
