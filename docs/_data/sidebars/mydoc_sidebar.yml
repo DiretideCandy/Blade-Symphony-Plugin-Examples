@@ -81,6 +81,6 @@ entries:
         output: web
         subfolderitems:
 
-        - title: Page 1
-          url: /some_page3.html
+        - title: First steps
+          url: /wap_wl_first_steps.html
           output: web
