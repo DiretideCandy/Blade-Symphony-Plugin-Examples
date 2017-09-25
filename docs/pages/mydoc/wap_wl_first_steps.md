@@ -19,4 +19,4 @@ First goals:
 	Start event when everyone ready.
 	3. /wl_reset<br>
 	Command for testing. Resets variables and entities to initial values and positions
-* Event's logics
+* Event's logic
