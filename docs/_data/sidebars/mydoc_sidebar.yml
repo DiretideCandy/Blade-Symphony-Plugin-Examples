@@ -72,9 +72,10 @@ entries:
     output: web
     folderitems:
 
+      subfolders:
     - title: Weakest link
       output: web
-      subfolders:
+      subfolderitems:
 
       - title: Page 1
         url: /some_page.html
