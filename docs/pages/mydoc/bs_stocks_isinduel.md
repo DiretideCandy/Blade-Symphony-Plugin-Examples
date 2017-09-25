@@ -16,7 +16,7 @@ Safety: 146% - Gormarim's and Elmo's versions are pretty much the same.
  *
  * @param client		Client entity index to check.
  *
- * @return				True if valid, false otherwise. 
+ * @return				True if in duel, false otherwise. 
  */
 stock bool IsInDuel(int client)
 {

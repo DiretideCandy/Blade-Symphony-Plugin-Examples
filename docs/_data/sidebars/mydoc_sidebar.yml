@@ -55,7 +55,7 @@ entries:
     output: web
     folderitems:
 
-    - title: Player's HP
+    - title: ... Player's HP
       url: /howto_hp.html
       output: web
 
@@ -67,7 +67,7 @@ entries:
       url: /some_page.html
       output: web
 
-  - title: WaP
+  - title: Writing a plugin
     output: web
     folderitems:
 

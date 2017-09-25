@@ -31,7 +31,7 @@ stock bool IsValidClient(int client)
  *
  * @param client		Client entity index to check.
  *
- * @return				True if valid, false otherwise. 
+ * @return				True if in duel, false otherwise. 
  */
 stock bool IsInDuel(int client)
 {
