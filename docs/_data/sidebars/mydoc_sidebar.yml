@@ -64,8 +64,8 @@ entries:
     output: web
     folderitems:
 
-    - title: example_ex1_before.sp
-      url: /some_page.html
+    - title: KotR Knockback.sp
+      url: /kotr_knockback.html
       output: web
 
   - title: Writing a plugin

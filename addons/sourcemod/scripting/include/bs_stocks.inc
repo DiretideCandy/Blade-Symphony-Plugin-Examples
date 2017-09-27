@@ -112,7 +112,7 @@ stock int CreateBrush(const char[] type, const float vecPos[3],/* float vecDir[3
 		DispatchKeyValue(ent, "spawnflags", flagsStr);
 		
 		DispatchKeyValue(ent, "wait", "0.0");		
-	
+		DispatchKeyValue(ent, "targetname", "kotr_knockback");
 		DispatchSpawn(ent);
 		ActivateEntity(ent);
 		TeleportEntity(ent, vecPos, NULL_VECTOR, NULL_VECTOR);
