@@ -150,7 +150,6 @@ ResetClient(client)
 }
 ```
 These will be called when player enters or leaves event area. 
-
 <br>
 We also add them to OnClientDisconnect event (we must reset player if he disconnected from inside event area) and to OnMapStart (to reset every player in case map change happened when event was in progress):
 ```c
@@ -168,5 +167,14 @@ public OnMapStart()
 }
 ```
 
-
 ## Entering and leaving event area
+
+There are at least three ways to monitor presence of players in event area:
+* Check player's position on every damage event. Then compare it with given area.
+	+ Area can have any shape
+	+ Available to any map
+	- Slow (compared to other methods)
+* Create trigger_multiple brush via Sourcemod, hook its OnTouch and OnEndTouch events
+	+ Available to any map
+	+ Fast
+	- server error
