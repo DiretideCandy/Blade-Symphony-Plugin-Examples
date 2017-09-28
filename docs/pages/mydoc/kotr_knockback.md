@@ -8,19 +8,56 @@ permalink: kotr_knockback.html
 folder: mydoc
 ---
 
-Simple plugin for pushing players on damage.
-
-* Pushes player away from attacker
-* Pushes only when player is inside trigger_multiple, provided by map
-<br><br>
 <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/blob/master/addons/sourcemod/scripting/kotr_knockback.sp" target="_blank">.sp file for SM 1.6</a>
 
+<br>
+Simple plugin for pushing players on damage.
+
+<br>
+* Pushes player away from attacker
+* Pushes only when player is inside trigger_multiple, provided by map
+
+
+## Globals
+```c
+#include <sourcemod> 	// always here
+
+#include <sdkhooks>		// required for hooking player damage event
+#include <sdktools>		// has many useful functions: TeleportEntity, FindEntityByClassname, etc. 
+
+#define PLUGIN_PREFIX "[KotR]" // without colors, because most messages will go to server console
+
+public Plugin:myinfo =
+{
+	name = "kotr_knockback",
+	author = "Crystal",
+	description = "knockback helper for raffle's KotR",
+	version = "1.0",
+	url = "https://diretidecandy.github.io/Blade-Symphony-Plugin-Examples/index.html"
+};
+
+// Starting speed of player after knockback push
+new Float:g_fKnockback;
+
+// Vertical angle of knockback
+new Float:g_fAngle;
+
+// array which stores 1 for players inside kb trigger, and 0 for players outside 
+new g_bKnockback[MAXPLAYERS+1];
+
+// index of kotr_knockback trigger entity
+new g_triggerEnt;
+
+// if 0 - usual output, if 1 - Prints more messages to server and chat
+new g_bDebug;
+```
+Plugin loads values of g_fKnockback, g_fAngle and g_bDebug from a text file.
 
 ## Pushing players
 
 To push players we need to detect damage, received by them. Luckily, Sourcemod libraries have OnTakeDamage event, therefore we don't need to monitor health of players every frame or something like that.
 
-We can see there how action declaration should look like, let's prepare it for adding pushing:
+Action declaration pasted from libraries and prepared for adding pushing:
 
 ```c
 public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype)
@@ -32,9 +69,9 @@ public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damage
 	if (damage <= 0.0)
 		return Plugin_Continue;
 		
-	/* 
-		Push player here
-	*/
+	/* Begin pushing */
+	
+	/* End pushing */
 		
 	return Plugin_Continue;
 }
@@ -42,20 +79,94 @@ public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damage
 
 This code executes right before game's code for dealing damage, and by returning Plugin_Continue value we tell Soucemod that we want game to continue executing original damage event. If we would need to prevent damage to player, we should return Plugin_Handled value.
 <br>
-Obvious choice for pushing players is <a href="https://sm.alliedmods.net/api/index.php?fastload=show&id=40&" target="_blank">TeleportEntity</a> function. It requires 4 arguments: entity to teleport, target position, direction and velocity. [][]
+Obvious choice for pushing players is <a href="https://sm.alliedmods.net/api/index.php?fastload=show&id=40&" target="_blank">TeleportEntity</a> function. It requires 4 arguments: entity to teleport, target position, orientation and velocity. We only need to change velocity of players, that's why we'll be passing NULL_VECTOR as target position and orientation. 
 
-<ul id="profileTabs" class="nav nav-tabs">
-<li class="active"><a href="#onepointeight" data-toggle="tab">1.6</a></li>
-<li><a href="#onepointsix" data-toggle="tab">1.8</a></li>
-</ul>
-<div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="onepointeight">
-<p>1.8 code will be here</p>
-</div>
-
-<div role="tabpanel" class="tab-pane" id="onepointsix">
 ```c
-PrintToServer("Hellow World!");
+	...
+
+	/* Begin pushing */
+	
+	// Get positions of both players to caluculate direction of push:
+	new Float:vecVictimPos[3];
+	new Float:vecAttackerPos[3];
+	
+	GetClientAbsOrigin(victim, vecVictimPos);
+	GetClientAbsOrigin(attacker, vecAttackerPos);
+	
+	// here we don't take into account height difference between players for simplicity
+	new Float:dist = DistanceXY(vecVictimPos, vecAttackerPos); 
+	
+	// calculate sin and cos of horizontal angle between players
+	new Float:cos = (vecVictimPos[0] - vecAttackerPos[0])/dist;
+	new Float:sin = (vecVictimPos[1] - vecAttackerPos[1])/dist;
+	
+	// spherically combine everything into velocity vector
+	new Float:vel[3];
+	vel[0] = g_fKnockback * Cosine(g_fAngle) * cos;
+	vel[1] = g_fKnockback * Cosine(g_fAngle) * sin;
+	vel[2] = g_fKnockback * Sine(g_fAngle);
+	
+	// change only velocity of victim player:
+	TeleportEntity(victim, NULL_VECTOR, NULL_VECTOR, vel);
+	
+	/* End pushing */
+	
+	...
 ```
-</div>
-</div>
+
+[Some pictures explaining calculations?]
+<br>[Maybe add "Push!" debug message?]
+<br>
+OnTakeDamage action is ready, but we are not done yet! OnTakeDamage is a function, which requires to be hooked to players to be called. Let's create functions, pretty common for event plugins: one will add players to our 'event', other will remove them from it.
+
+```c
+
+AddClient(client)
+{
+	// checking if player is not already there, because hooking and unhooking more then once is unsafe
+	if (g_bKnockback[client] < 1)
+	{
+		g_bKnockback[client] = 1;
+		
+		// hook player damage event for this player
+		SDKHook(client, SDKHook_OnTakeDamage, OnTakeDamage);
+		
+		if (g_bDebug != 0)
+			PrintToChatAll("%s Added knockback to client %d", PLUGIN_PREFIX, client);
+	}
+}
+
+ResetClient(client)
+{
+	if (g_bKnockback[client] > 0)
+	{
+		g_bKnockback[client] = 0;
+		
+		SDKUnhook(client, SDKHook_OnTakeDamage, OnTakeDamage);
+		
+		if (g_bDebug != 0)
+			PrintToChatAll("%s Removed knockback from client %d", PLUGIN_PREFIX, client);
+	}
+}
+```
+These will be called when player enters or leaves event area. 
+
+<br>
+We also add them to OnClientDisconnect event (we must reset player if he disconnected from inside event area) and to OnMapStart (to reset every player in case map change happened when event was in progress):
+```c
+public OnClientDisconnect(client)
+{
+	ResetClient(client);
+}
+
+public OnMapStart()
+{
+	for (new i = 1; i <= MaxClients; i++)
+		ResetClient(i);
+	
+	/* We will return here soon */
+}
+```
+
+
+## Entering and leaving event area
