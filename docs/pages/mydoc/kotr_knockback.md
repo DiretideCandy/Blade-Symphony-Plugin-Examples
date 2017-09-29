@@ -11,7 +11,7 @@ folder: mydoc
 <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/blob/master/addons/sourcemod/scripting/kotr_knockback.sp" target="_blank">.sp file for SM 1.6</a>
 
 <br>
-Simple plugin for pushing players on damage.
+Simple plugin for pushing players when they receive damage from another player.
 
 <br>
 * Pushes player away from attacker
@@ -57,7 +57,7 @@ Plugin loads values of g_fKnockback, g_fAngle and g_bDebug from a text file.
 
 To push players we need to detect damage, received by them. Luckily, Sourcemod libraries have OnTakeDamage event, therefore we don't need to monitor health of players every frame or something like that.
 
-Action declaration pasted from libraries and prepared for adding pushing:
+Action declaration pasted from libraries with some code prepared for adding pushing:
 
 ```c
 public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype)
@@ -170,11 +170,20 @@ public OnMapStart()
 ## Entering and leaving event area
 
 There are at least three ways to monitor presence of players in event area:
-* Check player's position on every damage event. Then compare it with given area.
-	+ Area can have any shape
-	+ Available to any map
+* Get player's position on every damage event. Then check if its inside a given area.
+	- Available on any map
+	- Area can have any shape
 	- Slow (compared to other methods)
 * Create trigger_multiple brush via Sourcemod, hook its OnTouch and OnEndTouch events
-	+ Available to any map
-	+ Fast
-	- server error
+	- Available on any map
+	- Afaik, can only have cuboid shape and {0, 0, 0} orientation
+	- Requires carefulness with creating and removing entities
+	- Genertes harmless server error on each brush creation
+	- Fast
+* Same as previous one, but create trigger_multiple on the map itself (with Hammer Editor)
+	- Available only to map creators
+	- Area can have any shape
+	- Fast
+	
+This plugin uses map's kotr_knockback trigger.
+
