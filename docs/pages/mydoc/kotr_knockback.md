@@ -13,7 +13,6 @@ folder: mydoc
 <br>
 Simple plugin for pushing players when they receive damage from another player.
 
-<br>
 * Pushes player away from attacker
 * Pushes only when player is inside trigger_multiple, provided by map
 
@@ -51,7 +50,7 @@ new g_triggerEnt;
 // if 0 - usual output, if 1 - Prints more messages to server and chat
 new g_bDebug;
 ```
-Plugin loads values of g_fKnockback, g_fAngle and g_bDebug from a text file.
+Plugin will load values of g_fKnockback, g_fAngle and g_bDebug from a text file.
 
 ## Pushing players
 
@@ -117,7 +116,7 @@ Obvious choice for pushing players is <a href="https://sm.alliedmods.net/api/ind
 [Some pictures explaining calculations?]
 <br>[Maybe add "Push!" debug message?]
 <br>
-OnTakeDamage action is ready, but we are not done yet! OnTakeDamage is a function, which requires to be hooked to players to be called. Let's create functions, pretty common for event plugins: one will add players to our 'event', other will remove them from it.
+OnTakeDamage action is ready, but we are not done yet! OnTakeDamage is a function, which requires to be hooked to players to be called.These two are functions, pretty common for event plugins: one will add players to our 'event', other will remove them from it.
 
 ```c
 
@@ -150,7 +149,7 @@ ResetClient(client)
 }
 ```
 These will be called when player enters or leaves event area. 
-<br>
+
 We also add them to OnClientDisconnect event (we must reset player if he disconnected from inside event area) and to OnMapStart (to reset every player in case map change happened when event was in progress):
 ```c
 public OnClientDisconnect(client)
