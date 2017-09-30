@@ -77,6 +77,7 @@ public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damage
 ```
 
 This code executes right before game's code for dealing damage, and by returning Plugin_Continue value we tell Soucemod that we want game to continue executing original damage event. If we would need to prevent damage to player, we should return Plugin_Handled value.
+
 <br>
 Obvious choice for pushing players is <a href="https://sm.alliedmods.net/api/index.php?fastload=show&id=40&" target="_blank">TeleportEntity</a> function. It requires 4 arguments: entity to teleport, target position, orientation and velocity. We only need to change velocity of players, that's why we'll be passing NULL_VECTOR as target position and orientation. 
 
@@ -186,3 +187,12 @@ There are at least three ways to monitor presence of players in event area:
 	
 This plugin uses map's kotr_knockback trigger.
 
+.
+.
+.
+
+[finding trigger entity and hooking touch events]
+<br><br>
+[load KeyValues from file]
+<br><br>
+[stock functions used]
