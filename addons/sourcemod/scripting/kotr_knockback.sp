@@ -28,7 +28,7 @@ new Float:g_fAngle;
 new g_bKnockback[MAXPLAYERS+1];
 
 // index of kotr_knockback trigger entity
-new triggerEnt;
+new g_triggerEnt;
 
 // 0 - usual output, 1 - Prints more messages to server and chat
 new g_bDebug;
@@ -77,33 +77,33 @@ public OnPluginStart()
 public OnMapStart()
 {
 	// reset everything (map change could happen when event was in progress, we should restore all initial values)
-	for (new i = 1; i < MaxClients; i++)
+	for (new i = 1; i <= MaxClients; i++)
 		ResetClient(i);
 	
 	// find kotr_knockback trigger [link]
-	triggerEnt = -1;
+	g_triggerEnt = -1;
 	
 	// this while loop cycles through every trigger_multiple entity and compares their names with "kotr_knockback".
-	while ((triggerEnt = FindEntityByClassname(triggerEnt, "trigger_multiple")) != -1)
+	while ((g_triggerEnt = FindEntityByClassname(g_triggerEnt, "trigger_multiple")) != -1)
 	{
 		decl String:strName[50];
-		GetEntPropString(triggerEnt, Prop_Data, "m_iName", strName, sizeof(strName));
+		GetEntPropString(g_triggerEnt, Prop_Data, "m_iName", strName, sizeof(strName));
 
 		if (strcmp(strName, "kotr_knockback") == 0)
 		{
 			// found trigger! hook events
-			HookSingleEntityOutput(triggerEnt, "OnStartTouch", StartTouch_KB, false); 
-			HookSingleEntityOutput(triggerEnt, "OnEndTouch", EndTouch_KB, false);	
+			HookSingleEntityOutput(g_triggerEnt, "OnStartTouch", StartTouch_KB, false); 
+			HookSingleEntityOutput(g_triggerEnt, "OnEndTouch", EndTouch_KB, false);	
 			
 			if (g_bDebug != 0)
-				PrintToServer("Found trigger! index = %d", triggerEnt);
+				PrintToServer("Found trigger! index = %d", g_triggerEnt);
 			
 			break;
 		}
 	}
 	
-	// if ((no triggers found) or (no trigger_multiple has that name)) then triggerEnt equals -1
-	if (triggerEnt == -1)
+	// if ((no triggers found) or (no trigger_multiple has that name)) then g_triggerEnt equals -1
+	if (g_triggerEnt == -1)
 		PrintToServer("Trigger not found! :(");
 }
 
@@ -111,10 +111,10 @@ public OnMapStart()
 public OnMapEnd()
 {	
 	// just in case, unhooking events
-	if (triggerEnt > MaxClients)
+	if (g_triggerEnt > MaxClients)
 	{
-		UnhookSingleEntityOutput(triggerEnt, "OnStartTouch", StartTouch_KB); 
-		UnhookSingleEntityOutput(triggerEnt, "OnEndTouch", EndTouch_KB); 
+		UnhookSingleEntityOutput(g_triggerEnt, "OnStartTouch", StartTouch_KB); 
+		UnhookSingleEntityOutput(g_triggerEnt, "OnEndTouch", EndTouch_KB); 
 	}
 }
 

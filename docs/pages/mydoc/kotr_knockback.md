@@ -86,7 +86,7 @@ Obvious choice for pushing players is <a href="https://sm.alliedmods.net/api/ind
 
 	/* Begin pushing */
 	
-	// Get positions of both players to caluculate direction of push:
+	// Get positions of both players to calculate direction of push:
 	new Float:vecVictimPos[3];
 	new Float:vecAttackerPos[3];
 	
