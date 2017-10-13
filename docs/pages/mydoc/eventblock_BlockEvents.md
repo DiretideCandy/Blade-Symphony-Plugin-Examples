@@ -1,37 +1,40 @@
 ---
-title: IsInDuel
-tags: [bs_stocks]
-keywords: bs_stocks, stocks, include, duel
-last_updated: 24.09.2017
+title: BlockEvents()
+tags: [bs_eventBlock]
+keywords: event, block, stocks, include
+last_updated: 13.10.2017
 sidebar: mydoc_sidebar
-permalink: bs_stocks_IsInDuel.html
+permalink: eventblock_BlockEvents.html
 folder: mydoc
 ---
 
-Safety: 146% - Gormarim's and Elmo's versions are pretty much the same.
+Safety: 99%? It won't create new same entity if there is already one. Also, maps with maximum number of entities shouldn't exist. And make sure you don't create map with entity named "ct_event_blocker_sprite_ct" in it. 
+
+Jokes aside, you must carefuly store index of blocking entity to destroy it after event. This storing should take into account sudden mapchanges during event.
 
 ```c
 /**
- * Checks if client is in duel.
+ * Create blocking entity.
  *
- * @param client		Client entity index to check.
- *
- * @return				True if in duel, false otherwise. 
+ * @return				Index of entity. 
  */
-stock bool IsInDuel(int client)
+stock BlockEvents()
 {
-	if(!IsClientInGame(client))
-		return false;
+	if (IsEventInProgress())
+		return -1;
+		
+	// Create Entity
+	new ent = CreateEntityByName("env_sprite");
 	
-	int g_DuelState[MAXPLAYERS+1];
-	int m_Offset = FindSendPropInfo("CBerimbauPlayerResource", "m_iDuel");
-	int ResourceManager = FindEntityByClassname(-1, "berimbau_player_manager");
-
-	GetEntDataArray(ResourceManager, m_Offset, g_DuelState, 34, 4);
+	if (ent > MaxClients)
+	{
+		DispatchKeyValue(ent, "targetname", EVENT_BLOCKER_NAME);
+		DispatchSpawn(ent);
+	}
 	
-	if(g_DuelState[client] != 0)
-		return true;
-	
-	return false;
+	//PrintToChatAll("new ent %d!", ent);
+	return ent;
 }
 ```
+
+Function returns entity index, this means plugin should store it itself. To unblock events plugin must pass this index to UnblockEvents() function.

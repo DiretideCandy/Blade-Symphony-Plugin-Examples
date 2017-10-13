@@ -4,7 +4,7 @@ tags: [bs_stocks]
 keywords: bs_stocks, stocks, include, duel
 last_updated: 24.09.2017
 sidebar: mydoc_sidebar
-permalink: bs_stocks_IsInDuel.html
+permalink: eventblock_UnblockEvents.html
 folder: mydoc
 ---
 
