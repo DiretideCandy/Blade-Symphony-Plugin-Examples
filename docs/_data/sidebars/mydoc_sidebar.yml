@@ -36,7 +36,7 @@ entries:
 #      url: /some_page.html
 #      output: web
 
-  - title: bs_stocks.inc
+  - title: Stock functions
     output: web
     folderitems:
 
@@ -44,13 +44,35 @@ entries:
       url: /bs_stocks.html
       output: web
 
-    - title: IsValidClient
-      url: /bs_stocks_IsValidClient.html
-      output: web
+      subfolders:
 
-    - title: IsInDuel
-      url: /bs_stocks_IsInDuel.html
-      output: web
+      - title: bs_stocks.inc
+        output: web
+        subfolderitems:
+
+        - title: IsValidClient
+          url: /bs_stocks_IsValidClient.html
+          output: web
+
+        - title: IsInDuel
+          url: /bs_stocks_IsInDuel.html
+          output: web
+
+      - title: bs_eventBlock.inc
+        output: web
+        subfolderitems:
+
+        - title: BlockEvents
+          url: /eventblock_BlockEvents.html
+          output: web
+
+        - title: IsEventInProgress
+          url: /eventblock_IsEventInProgress.html
+          output: web
+
+        - title: UnblockEvents
+          url: /eventblock_UnblockEvents.html
+          output: web
 
   - title: How to do ...
     output: web

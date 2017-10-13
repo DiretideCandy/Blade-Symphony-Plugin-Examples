@@ -1,0 +1,7 @@
+"kotr_knockback"
+{
+	"debug"			"1"		//spams some data to chat and server console 
+	"force"			"850"	// default is 850
+	"angle"			"0.5"	// Pi/2 is up, 0 is forward, -Pi/2 is down, Pi is back (?!)
+	"manualdamage" 	"1"		// 0 is push only. 1 ignores game's damage event (to prevent rolling state) 
+}

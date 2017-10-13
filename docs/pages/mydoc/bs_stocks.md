@@ -1,5 +1,5 @@
 ---
-title: bs_stocks.inc
+title: Stock functions
 tags: [bs_stocks]
 keywords: bs_stocks, stocks, include
 last_updated: 24.09.2017
@@ -12,6 +12,7 @@ folder: mydoc
 ## bs_stocks.inc file
 
 [What and why]<br>
+[Elmo's smlib and bs_stocks]<br>
 [Place it into /addons/sourcemod/scripting/include/]<br>
 [Mine: <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/blob/master/addons/sourcemod/scripting/include/bs_stocks.inc">bs_stocks.inc</a>]
 

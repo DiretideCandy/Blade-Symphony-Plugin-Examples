@@ -1,3 +1,13 @@
+// 1.0.1 - added manual damage applying option to kotr_knockback.txt
+/*
+you know from playing KOTR quite a bit now i realized there's a little exploit for the knockback, 
+you know when someones hits you with a charged attack and you go to that rolling state in the ground where you can either attack or parry, 
+as long as you're in that rolling state you dont really get increased knockback at all
+[23:47] 👌 raffle 👓: so sometimes people dont fall down because they go to roll state, 
+problem is i have no idea how we could get around this .. :thinking:
+*/
+//
+
 #include <sourcemod> 	// always here
 
 #include <sdkhooks>		// required for hooking player damage event
@@ -8,7 +18,7 @@ public Plugin:myinfo =
 	name = "kotr_knockback",
 	author = "Crystal",
 	description = "knockback helper for raffle's kotr",
-	version = "1.0",
+	version = "1.0.1",
 	url = "https://diretidecandy.github.io/Blade-Symphony-Plugin-Examples/index.html"
 };
 
@@ -29,6 +39,9 @@ new g_bKnockback[MAXPLAYERS+1];
 
 // index of kotr_knockback trigger entity
 new g_triggerEnt;
+
+// ignore game's original damage
+new g_bManualDamage;
 
 // 0 - usual output, 1 - Prints more messages to server and chat
 new g_bDebug;
@@ -52,6 +65,7 @@ public OnPluginStart()
 		g_fKnockback = 850.0;
 		g_fAngle = 0.5;
 		g_bDebug = 0;
+		g_bManualDamage = 0;
 		
 	}
 	else
@@ -224,8 +238,16 @@ public Action:OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damage
 	// So here we change only speed of player:
 	TeleportEntity(victim, NULL_VECTOR, NULL_VECTOR, vel);
 	
-	// value Plugin_Continue means game should get back to applying damage as always after that push.
-	return Plugin_Continue;	
+	if (g_bManualDamage)
+	{
+		// value Plugin_Handled means game shouldn't get back to applying damage as always after that push.
+		return Plugin_Handled;	
+	}
+	else
+	{
+		// value Plugin_Continue means game should get back to applying damage as always after that push.
+		return Plugin_Continue;
+	}
 }
 
 
