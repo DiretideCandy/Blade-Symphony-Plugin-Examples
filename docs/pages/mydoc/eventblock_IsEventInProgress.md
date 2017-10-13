@@ -8,7 +8,7 @@ permalink: eventblock_IsEventInProgress.html
 folder: mydoc
 ---
 
-Safety: 100% - Probably expensive if map has maximum entities and most of them are env_sprite? Should be fine, its not like it being called often.
+Safety: 100% - Probably a bit expensive if map has maximum entities and almost all of them are env_sprite? Should be fine, its not like it being called often.
 
 ```c
 #define EVENT_BLOCKER_NAME "ct_event_blocker_sprite_ct"
