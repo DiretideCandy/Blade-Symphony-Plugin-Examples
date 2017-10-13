@@ -8,9 +8,9 @@ permalink: eventblock_BlockEvents.html
 folder: mydoc
 ---
 
-Safety: 99%? It won't create new same entity if there is already one. Also, maps with maximum number of entities shouldn't exist. And make sure you don't create map with entity named "ct_event_blocker_sprite_ct" in it. 
+Safety: 90%? It won't create new same entity if there is already one. Also, maps with maximum number of entities shouldn't exist. And make sure you don't create map with entity named "ct_event_blocker_sprite_ct" in it. 
 
-Jokes aside, you must carefuly store index of blocking entity to destroy it after event. This storing should take into account sudden mapchanges during event.
+Jokes aside, you must carefuly store index of blocking entity to destroy it after event. This storing should take into account sudden mapchanges during event. Worst case scenario: someone starts bchess voting (no block yet), then admin enters manual /event_block command. This command (unlike event voting start commands) doesn't have vote-in-progress checks and blocks events. Chess event can't create new blocking entity after successful vote and can't remove block after event ends.
 
 ```c
 /**
