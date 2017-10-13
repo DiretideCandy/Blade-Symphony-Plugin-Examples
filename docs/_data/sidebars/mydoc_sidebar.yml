@@ -86,6 +86,10 @@ entries:
     output: web
     folderitems:
 
+    - title: event_vote
+      url: /event_vote.html
+      output: web
+
     - title: KotR Knockback.sp
       url: /kotr_knockback.html
       output: web

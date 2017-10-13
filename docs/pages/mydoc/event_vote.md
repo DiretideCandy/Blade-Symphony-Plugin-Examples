@@ -10,6 +10,10 @@ folder: mydoc
 
 <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/blob/master/addons/sourcemod/scripting/event_vote.sp" target="_blank">.sp file for SM 1.6</a>
 
+Simple voting plugin for teleporting people to admin.
+
+Also has commands to block and unblock automatic events manually
+
 ```c
 #include <sourcemod> 	// always here
 #include <sdkhooks>		
