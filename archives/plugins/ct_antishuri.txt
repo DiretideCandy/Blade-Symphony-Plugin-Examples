@@ -1,0 +1,29 @@
+"triggers"
+{
+	"Battle Chess top" // name doesn't matter
+	{
+		// position and size of trigger brush
+		"origin"	"-4288 -1376 920"
+		"wlh"		"1792 1344 128"	// (width, length, height) from hammer editor
+	}
+	"Doombridge South"
+	{
+		"origin"	"-4704 -7808 600"
+		"wlh"		"576 128 528"
+	}
+	"Doombridge North"
+	{
+		"origin"	"-4704 -6720 600"
+		"wlh"		"576 128 528"
+	}
+	"Doombridge top"
+	{
+		"origin"	"-4704 -7264 672"
+		"wlh"		"576 960 384"
+	}
+	"Fencing Area"
+	{
+		"origin"	"-2432 -3136 0"
+		"wlh"		"1152 1152 384"
+	}
+}

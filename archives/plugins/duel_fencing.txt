@@ -1,0 +1,26 @@
+"fencing"
+{
+	"allow_sideair"		"0"
+	"allow_roll"		"0"
+	"allow_dash"		"1"
+	"mat_width"			"45"	// step-off trigger width
+	
+	"allowed_maps"
+	{		
+		"duel_f_test_v0"
+		{	
+			"duel1" // name of duel entity
+			{
+				"origin"	"-526 -280 -3069" // origin of hurt trigger (if placed as usual)
+			}
+			"duel2"
+			{
+				"origin"	"-256 -280 -3069"
+			}
+			"duel3"
+			{
+				"origin"	"43 -280 -3069"
+			}
+		}
+	}
+}

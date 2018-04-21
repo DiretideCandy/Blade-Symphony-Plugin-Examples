@@ -90,7 +90,7 @@ entries:
       url: /event_vote.html
       output: web
 
-    - title: KotR Knockback.sp
+    - title: kotr_knockback.sp
       url: /kotr_knockback.html
       output: web
 
@@ -110,3 +110,11 @@ entries:
         - title: First steps
           url: /wap_wl_first_steps.html
           output: web
+
+  - title: More...
+    output: web
+    folderitems:
+
+    - title: Plugin archives
+      url: /archives.html
+      output: web
