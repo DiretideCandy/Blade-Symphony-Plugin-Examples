@@ -128,12 +128,12 @@ Just another silly plugin with lasers. Makes ordinary duels unplayable because o
 ## kotr_knockback.sp, kotr_gravity.sp, kotr_vote.sp
 
 [tested, should be safe]<br>
-Plugins for raffle's KotR event. Knockbback from damage, lowered gravity and voting for event from Elmo's Battle Chess.
+Plugins for raffle's KotR event. Knockback from damage, lowered gravity and voting for event from Elmo's Battle Chess.
 
 ## Machine.sp
 
 [Only for controlled, 'manual' events]<br>
-Gormarim's simple machine event helper. Can add particle effect to a machine's sword (which was making things a bit laggy and distracted machine player a lot :)
+Gormarim's simple machine event helper. Also can add particle effect to a machine's sword (which was making things a bit laggy and distracted machine player a lot :)
 
 ## OnTakeDamagev4.sp
 
