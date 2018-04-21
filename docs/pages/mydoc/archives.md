@@ -9,7 +9,7 @@ folder: mydoc
 ---
 
 ## Intro
-This page describes some plugins in <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/tree/master/archives/scripting.">/archives/scripting/</a>] folder<br><br>
+This page describes some plugins in <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/tree/master/archives/scripting">/archives/scripting/</a>] folder<br><br>
 But be warned: some of them are not tested enough, some are not working, chaotic, broken from the start or unnecessarily overcomplicated (especially mine).<br>
 And almost most of them are written for (here I go again) SourceMod 1.6. 
 There are many differences in newest versions of SM, but most significant changes in 1.7 were about tags.<br>
