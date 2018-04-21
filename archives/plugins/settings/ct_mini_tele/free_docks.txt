@@ -1,0 +1,45 @@
+"TelePoints"
+{
+	// points for players
+	" Left"
+	{
+		"position"		"-384.546082 1598.671143 0.031250"
+		"orientation"	"10 47 0"
+	}
+	" Right"
+	{
+		"position"		"2965.298828 2069.059326 2.031246"
+		"orientation"	"10 -166 0"
+	}
+	"Arena"
+	{
+		"position"		"1763 155 567"
+		"orientation"	"20 0 0"
+	}
+	"AWP"
+	{
+		"position"		"1677 1896 1324"
+		"orientation"	"15 0 0"
+	}
+	
+	
+	// points for admins
+	"Admins:1"
+	{
+		"admin"			"1"
+		"position"		"-1496 3665 -59"
+		"orientation"	"10.0 330.0 0.0"
+	}
+	"Admins:2"
+	{
+		"admin"			"1"
+		"position"		"-1431 4235 -123"
+		"orientation"	"10.0 330.0 0.0"
+	}
+	"Admins:3"
+	{
+		"admin"			"1"
+		"position"		"-1443 4912 -219"
+		"orientation"	"10.0 330.0 0.0"
+	}
+}

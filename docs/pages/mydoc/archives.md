@@ -11,7 +11,7 @@ folder: mydoc
 ## Intro
 This page describes some plugins in <a href="https://github.com/DiretideCandy/Blade-Symphony-Plugin-Examples/tree/master/archives/scripting">/archives/scripting/</a>] folder<br><br>
 But be warned: some of them are not tested enough, some are not working, chaotic, broken from the start or unnecessarily overcomplicated (especially mine).<br>
-And almost most of them are written for (here I go again) SourceMod 1.6. 
+And almost all of them are written for (here I go again) SourceMod 1.6. 
 There are many differences in newest versions of SM, but most significant changes in 1.7 were about tags.<br>
 In old 1.6 plugins you will find these declarations:
 ```c
@@ -72,17 +72,29 @@ Plugin for printing button presses. Don't remember test results, but it can show
 Creates trigger_multiple entities on positions from ct_antishuri.txt. Destroys any shuriken on trigger's OnTouchEvent. <br>
 Sometimes it is possible to hit players inside those at point blank range, also destroyed shuris leave their flying sounds on.
 
+## ct_events.sp
+
+[not tested enough]<br>
+Just another attempt to write an all-in-one event plugin. Had nice working TDM in it, but could be left in reworking state, I don't remember well.<br>
+Now, when we have even the simpliest event block functions, I like the 1 plugin for 1 event system more.<br>
+(skyscraper map wasn't good idea for it, because it seems sm-created lasers pollute water textures even through walls and when destroyed!)
+
 ## ct_mini_heal.sp
 
 [tested, should be safe]<br>
 Commands /heal, /heal_all and /hp. Uses Gormarim's way of finding player by part of his name. 
 Maybe it was easier to do with Elmo's FindPlayerByName, which is now in my bsstocks.inc.
 
+## ct_mini_tele.sp
+
+[tested, should be safe]<br>
+/tele, /bring and /goto commands for TenKey's server. Loads destination list from files in plugins\settings\ct_mini_tele\ folder.
+
 ## DamageShow.sp
 
 [only for testing]<br>
 Gorm's simple onTakeDamage test. Should print to chat any damage dealt by players.<br>
-Commeent all conditions in it to print all damage.
+Comment all conditions in it to print all damage.
 
 ## DeathTest.sp
 
@@ -96,10 +108,10 @@ Current version of fencing plugin for duel server. Works fine, but with minimum 
 
 ## ed.sp
 
-[tested, safe]
+[tested, safe]<br>
 Elmo's plugin for manually starting duels in ffa (1v2 and 2v2 too!). The only ancient artifact of successful use of sigscanning.<br>
 Works only for linux servers.<br>
-(Only duels without timelimit. Kills server if you try to apply timelimit, solution was not found)
+(Only duels without timelimit. Kills server if you try to apply timelimit, solution was not found).
 
 ## event_vote.sp
 
@@ -109,7 +121,7 @@ Applies event block from bs_eventBlock.inc lilbrary.
 
 ## it.sp
 
-[works, but very laggy, not safe]
+[works, but very laggy, not safe]<br>
 Just another silly plugin with lasers. Makes ordinary duels unplayable because of lags from heavy computations on every frame.<br>
 
 ## kotr_knockback.sp, kotr_gravity.sp, kotr_vote.sp
@@ -119,8 +131,8 @@ Plugins for raffle's KotR event. Knockbback from damage, lowered gravity and vot
 
 ## Machine.sp
 
-[Only for controlled, 'manual' events]
-Gormarim's simple machine event helper. Can add particle effect to a machine's sword (which was making things a bit laggy and distracted machine player a lot:)
+[Only for controlled, 'manual' events]<br>
+Gormarim's simple machine event helper. Can add particle effect to a machine's sword (which was making things a bit laggy and distracted machine player a lot :)
 
 ## OnTakeDamagev4.sp
 
@@ -130,8 +142,8 @@ More Gorm's onTakeDamage tests. This one should have more info in it.
 ## sf_bchess_automation_v018.sp
 
 [tested, safe]<br>
-Elmo's Auto Battle Chess plugin. Ask raffle if you need original settings file for it.
-sf_bchess_automation_v018_b.sp - I added eventBlock for raffle's absp map, maybe something else.
+Elmo's Auto Battle Chess plugin. Ask raffle if you need original settings file for it.<br>
+sf_bchess_automation_v018_b.sp - I added event blocking for raffle's absp map, maybe something else.
 
 ## sf_kendo_automation_V2.sp
 

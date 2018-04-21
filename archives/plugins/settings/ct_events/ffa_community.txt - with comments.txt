@@ -1,0 +1,53 @@
+"MapConfig"
+{
+	// named areas and points.
+	//(for those which appear 2 or more times) 
+	// useful for default events but entirely optional
+	"_Links_"
+	{
+		//default tdm
+		//////////////////////////////////
+		"tdm_arena"
+		{
+			"shape"				"rectangle" // or "circle"
+			"position"			"0 0 0"
+			"size"				"200 200 200" //whl from hammer
+			//"radius"			"500" // only for circle arena
+		}
+		
+		// spawn circle. for "teams" spawn it is circle too (for 2 teams positions on 0 and 180 degrees, etc)
+		"tdm_spawn" //same values for "mixed" and "teams" spawn positions
+		{
+			"position"			"0 0 0"
+			"radius"			"400" // should be inside tdm_arena (plugin doesn't check it)
+		}
+		
+		// point for teleporting spectators out of event arena
+		"tdm_teleout" // obviously, should be outside arena. Doesn't matter if inside or outside of spectator brush
+		{
+			"position"			"0 0 0"
+			"orientation"		"0 0 0"
+		}
+		
+		// brush for spamming event messages. people outside don't receive them
+		"tdm_spectator_area" //rectangle only
+		{
+			"position"			"0 0 0"
+			"size"				"200 200 200" //whl from hammer
+		}
+	}
+	 
+	"_Events_"
+	{
+		"Team Deathmatch"
+		{
+			"public"			"1"		// available to all. default is 0 (only for admins)
+			"type"				"tdm"
+			//"modify"			"no"
+			//"default_links"	"1"
+			//"spawn"			"mixed"
+			//"lasers"			"no"
+		}
+	}
+}
+

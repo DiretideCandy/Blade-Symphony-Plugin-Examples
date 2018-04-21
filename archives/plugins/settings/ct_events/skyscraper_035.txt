@@ -1,0 +1,112 @@
+"MapConfig"
+{
+	// named areas and points.
+	//(for those which appear 2 or more times) 
+	// useful for default events but entirely optional
+	"_Links_"
+	{
+		//default tdm (roof)
+		//////////////////////////////////
+		"tdm_arena"
+		{
+			"shape"				"rectangle"	
+			"position"			"0 160 544" //@(origin) from hammer
+			"size"				"1024 896 192" //whl from hammer
+			//"radius"			"500" // only for circle arena. warning! doesn't have Z(vertical) limits
+		}
+		
+		// spawn circle. for "teams" spawn it is circle too (for 2 teams positions on 0 and 180 degrees, etc)
+		"tdm_spawn" //same values for "mixed" and "teams" spawn positions
+		{
+			"position"			"0 160 449"
+			"radius"			"344" // should be inside tdm_arena (plugin doesn't check this)
+		}
+		
+		// point for teleporting spectators out of event arena
+		"tdm_teleout" // obviously, should be outside arena. Doesn't matter if inside or outside of spectator brush
+		{
+			"position"			"96 672 432"
+			"orientation"		"10 270 0"
+		}
+		
+		// brush for spamming event messages. people outside don't receive them
+		"tdm_spectator_area" //rectangle only
+		{
+			"position"			"0 160 512"
+			"size"				"2048 1856 256" //whl from hammer
+		}
+		
+		//hall tdm
+		//////////////////////////////////
+		"hall_arena"
+		{
+			"shape"				"rectangle"	
+			"position"			"-1 78 -552" //@(origin) from hammer
+			"size"				"962 793 516" //whl from hammer
+			//"radius"			"500" // only for circle arena. warning! doesn't have Z(vertical) limits
+		}
+		
+		// spawn circle. for "teams" spawn it is circle too (for 2 teams positions on 0 and 180 degrees, etc)
+		"hall_spawn" //same values for "mixed" and "teams" spawn positions
+		{
+			"position"			"-1 78 -807"
+			"radius"			"384" // should be inside tdm_arena (plugin doesn't check this)
+		}
+		
+		// point for teleporting spectators out of event arena
+		"hall_teleout" // obviously, should be outside arena. Doesn't matter if inside or outside of spectator brush
+		{
+			"position"			"346 -547 -707"
+			"orientation"		"10 90 0"
+		}
+		
+		// brush for spamming event messages. people outside don't receive them
+		"hall_spectator_area" //rectangle only
+		{
+			"position"			"3 98 -552"
+			"size"				"1553 1355 516" //whl from hammer
+		}
+	}
+	 
+	"_Events_"
+	{
+		"Team Deathmatch"
+		{
+			"public"			"1"		// available to all. default is 0 (only for admins)
+			"type"				"tdm"
+			//"borderheight"	"452"	// laser borders for arena. no borders if param not found
+			//"default_links"	"1"
+			//"team_count"		"2"
+			//"modify"			"no"
+			"starttp"			"mixed"
+			"minplayers"		"2"		// minimum players for autoevent
+		}
+		"Team Deathmatch Debug"
+		{
+			"public"			"0"		// available to all. default is 0 (only for admins)
+			"type"				"tdm"
+			"default_links"		"0"
+			"arena"
+			{
+				//"link"		"tdm_arena"
+				"shape"			"circle"
+				"position"		"-1 78 -568"
+				"radius"		"540"
+			}
+			"spawn"
+			{
+				"link"			"tdm_spawn"
+			}
+			"teleout"
+			{
+				"position"		"346 -547 -707"
+				"orientation"	"-45 135 0"
+			}
+			"spectator_area"
+			{
+				"link"			"tdm_spectator_area"
+			}
+		}
+	}
+}
+

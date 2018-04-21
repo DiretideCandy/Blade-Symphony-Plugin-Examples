@@ -1,0 +1,26 @@
+"TelePoints"
+{
+	// points for players
+	"Hall"
+	{
+		"position"		"1210.989502 -907.698486 192.031250"
+		"orientation"	"0.0 90.0 0.0"
+	}
+	"Arena"
+	{
+		"position"		"1320.264404 1188.235718 312.031250"
+		"orientation"	"0.0 0.0 0.0"
+	}
+	"Bridge"
+	{
+		"position"		"-968.864929 947.980591 192.031250"
+		"orientation"	"0.0 0.0 0.0"
+	}
+	"Rail"
+	{
+		"position"		"-1191.221436 -617.571533 -63.968750"
+		"orientation"	"0.0 180.0 0.0"
+	}
+	
+	// points for admins
+}

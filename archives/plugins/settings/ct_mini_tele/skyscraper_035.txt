@@ -1,0 +1,36 @@
+"TelePoints"
+{
+	// points for players
+	"Hall"
+	{
+		"position"		"-44.619759 -518.704651 -746.968750"
+		"orientation"	"0.0 90.0 0.0"
+	}
+	"SF room"
+	{
+		"position"		"567.350830 103.115364 -280.968750"
+		"orientation"	"0.0 -180.0 0.0"
+	}
+	"Pool"
+	{
+		"position"		"-8.328969 -107.152031 128.031250"
+		"orientation"	"0.0 -90.0 0.0"
+	}
+	"Outside (up)"
+	{
+		"position"		"-719.219910 -558.560364 96.031250"
+		"orientation"	"0.0 45.0 0.0"
+	}
+	"Outside (down)"
+	{
+		"position"		"-76.551147 -951.416443 -295.968750"
+		"orientation"	"0.0 77.0 0.0"
+	}
+	"Roof"
+	{
+		"position"		"4.68886 740.0 351.281250"
+		"orientation"	"0.0 270.0 0.0"
+	}
+	
+	// points for admins
+}
