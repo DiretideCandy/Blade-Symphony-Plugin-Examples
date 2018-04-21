@@ -13,7 +13,7 @@ This page describes some plugins in <a href="https://github.com/DiretideCandy/Bl
 But be warned: some of them are not tested enough, some are not working, chaotic, broken from the start or unnecessarily overcomplicated (especially mine).<br>
 And almost all of them are written for (here I go again) SourceMod 1.6. 
 There are many differences in newest versions of SM, but most significant changes in 1.7 were about tags.<br>
-In old 1.6 plugins you will find these declarations:
+<br>In old 1.6 plugins you will find these declarations:
 ```c
 public Action:Test(client, args)
 //
@@ -22,7 +22,7 @@ new Float:vec2[3];
 //
 decl String:str[32];
 ```
-instead of these from 1.7 (and newest SM tutorials):
+<br>instead of these from 1.7 (and newest SM tutorials):
 ```c
 public Action Test(int client, int args)
 //
@@ -30,6 +30,7 @@ float vec1[3], vec2[3];
 //
 char str[32];
 ```
+<br> 90% of old plugin code (and libraries) should work well in new versions of SM though.
 
 ## include/bsstocks.inc
 
